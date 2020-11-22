@@ -1,8 +1,8 @@
 #include<iostream>
 #include<vector>
-#include<hash_map>
+#include<map>
+#include<list>
 using namespace std;
-
 vector<int>nums ={5,7,9,2,4,24,27,26,11,88};
 int target =28;
 int len =10;
@@ -37,6 +37,7 @@ bool sum2()
 {
     bool work =false;
     //查找 某一元素是否存在可以使用散列表 ，用空间换时间
+    
     return work;
 }
     
