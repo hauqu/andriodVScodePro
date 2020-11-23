@@ -11,7 +11,7 @@ bool sum2();
 int main()
 {
 	sum1();
-    //unorder_map<int,int>hash;
+    
     cout<<"支持c11"<<endl;
     return 0;
 }
