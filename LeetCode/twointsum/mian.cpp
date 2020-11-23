@@ -11,6 +11,7 @@ bool sum2();
 int main()
 {
 	sum1();
+    
     return 0;
 }
 
@@ -37,6 +38,7 @@ bool sum2()
 {
     bool work =false;
     //查找 某一元素是否存在可以使用散列表 ，用空间换时间
+    //对于某个x ，则需要在剩余数组中寻找target－x
     
     return work;
 }
