@@ -4,15 +4,19 @@
 #include<list>
 using namespace std;
 vector<int>nums ={5,7,9,2,4,24,27,26,11,88};
+int num[10] ={5,7,9,2,4,24,27,26,11,88};
 int target =28;
 int len =10;
 bool sum1();//暴力枚举
-bool sum2();
+bool sum2();//hash表查找 用空间换时间
 int *buildHashTable(int n[],int len);
 int findHashTable(int value,int l,int h[]);//返回该值位置
 int main()
 {
-	sum2();
+    cout<<"这是解决方案1，暴力枚举"<<endl;
+	sum1();
+    cout<<"这是解决方案2，hash 查找"<<endl;
+    sum2();
     cout<<"支持c11"<<endl;
     return 0;
 }
@@ -40,15 +44,17 @@ bool sum2()
 {
      //查找 某一元素是否存在可以使用散列表 ，用空间换时间
     //对于某个x ，则需要在剩余数组中寻找target－x
+    //时间复杂度 N 空间复杂度 N
+
 	bool work =false; 
-    int *hash[] = buildHashTable(nums,len);
+    int *hash = buildHashTable(num,len);
     for(int i=0;i<len;i++)
     {
         //nums[i], find target -num[i]
-        int p= findHashTable(target -nums[i]); 
+        int p= findHashTable(target -num[i],len*2,hash); 
         if(p!=-1)
         {
-            cout<<nums[i]<<"+"<<target-nums[i]<<"="<<target<<endl;
+            cout<<num[i]<<"+"<<target-num[i]<<"="<<target<<endl;
             work =true;
         }
     }
@@ -96,7 +102,7 @@ int *buildHashTable(int n[],int len)
 
 }
 
-int findHashTable(int value,int l,int h[]);//返回该值位置
+int findHashTable(int value,int l,int h[])//返回该值位置
 {
 	//l 是哈希表的长度，是数组长度的2倍
 
