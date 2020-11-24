@@ -9,7 +9,10 @@ int main(int arg,char argv[])
 {
     
 	//string ? string::reverse?
-	string sn;
+	string sn =std::to_string(n);
+	sn.reserve();
+	n = std::atoi(sn);
+
     
     return 0;
 }

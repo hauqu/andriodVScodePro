@@ -3,3 +3,7 @@
 ################################################################################
 
 *.suo
+/.vs/andriodVScodePro/v16/ipch/AutoPCH/f2a3f8cae1e7f1b7/MAIN.ipch
+*.db
+/.vs/andriodVScodePro/v16/Browse.VC.opendb
+*.json
