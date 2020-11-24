@@ -9,10 +9,10 @@ int len =10;
 bool sum1();//暴力枚举
 bool sum2();
 int *buildHashTable(int n[],int len);
+int findHashTable(int value,int l,int h[]);//返回该值位置
 int main()
 {
-	sum1();
-    
+	sum2();
     cout<<"支持c11"<<endl;
     return 0;
 }
@@ -38,9 +38,20 @@ bool sum1()
 }
 bool sum2()
 {
-    bool work =false;
-    //查找 某一元素是否存在可以使用散列表 ，用空间换时间
+     //查找 某一元素是否存在可以使用散列表 ，用空间换时间
     //对于某个x ，则需要在剩余数组中寻找target－x
+	bool work =false; 
+    int *hash[] = buildHashTable(nums,len);
+    for(int i=0;i<len;i++)
+    {
+        //nums[i], find target -num[i]
+        int p= findHashTable(target -nums[i]); 
+        if(p!=-1)
+        {
+            cout<<nums[i]<<"+"<<target-nums[i]<<"="<<target<<endl;
+            work =true;
+        }
+    }
     
     return work;
 }
@@ -66,6 +77,11 @@ int *buildHashTable(int n[],int len)
             while(true)
             {
                 k++;
+                if(k==2*len)
+                {
+                    cout<<"hash 构建失败，内存溢出"<<endl;
+                    break;
+                }
                 if(hashtable[k]==-1)
                 {
                 	hashtable[k] =n[i];
@@ -76,5 +92,43 @@ int *buildHashTable(int n[],int len)
         }
 
     }
+	return hashtable;
+
+}
+
+int findHashTable(int value,int l,int h[]);//返回该值位置
+{
+	//l 是哈希表的长度，是数组长度的2倍
+
+    int k = value % (l/2);
+    if(h[k]==value)
+    {
+        return k;
+    }else 
+    {
+        if(h[k]==-1)
+        {
+            return -1;
+            //没有该元素
+        }
+        //线性探测
+        while(true)
+        {
+			k++;
+            if(k==l)
+            return -1;
+            if(h[k]==value)
+            {
+                return k;
+            }
+            if(h[k]==-1)
+        	{
+            return -1;
+            //没有该元素
+        	}
+        }
+    }
+
+    return -1;
 }
     
