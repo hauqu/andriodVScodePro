@@ -8,6 +8,7 @@ int target =28;
 int len =10;
 bool sum1();//暴力枚举
 bool sum2();
+int *buildHashTable(int n[],int len);
 int main()
 {
 	sum1();
@@ -42,5 +43,38 @@ bool sum2()
     //对于某个x ，则需要在剩余数组中寻找target－x
     
     return work;
+}
+int *buildHashTable(int n[],int len)
+{
+    //返回一个hash表，长度为2 len
+    // H(k) = n[k] mod len
+    //冲突处理，线性探测
+	int *hashtable = new int[2*len];
+    for(int i=0;i<2*len;i++)
+    {
+        hashtable[i] =-1;//该值用于判空
+    }
+    for(int i=0;i<len;i++)
+    {
+        int k = n[i]% len;
+        if(hashtable[k]==-1)
+        {
+			hashtable[k] =n[i];
+        }else 
+        {
+            //冲突处理
+            while(true)
+            {
+                k++;
+                if(hashtable[k]==-1)
+                {
+                	hashtable[k] =n[i];
+                    break;
+                }
+
+            }
+        }
+
+    }
 }
     
