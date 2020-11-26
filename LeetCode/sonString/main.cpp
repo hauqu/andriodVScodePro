@@ -9,15 +9,18 @@ using namespace std;
 找出不含重复字符的最长子串
 */
 bool findC(string s, char c);
-string m ="abca";
+string m ="abcabcbb";
 
 string sonString(string s);//暴力解法
 /*
 滑动窗口法，查找重复字符串使用哈希表
-
-
+ 🍰
+ 当子串 向右包含一个字符 重复时，假设重复的字符位置 i ,新重复字符 j
+ 则新子串左端位置应当从i 开始 ，j 结束
 */
-std::unordered_set<char>occ;
+int countC(string t,char c);
+string songString2(string s);
+
 int main(int arg,char *argv[])
 {
     cout<<m<<endl;
@@ -54,4 +57,40 @@ string sonString(string s)
         }
     }
     return son;
+}
+int countC(string t,char c)
+{
+    int n =t.size();
+
+   for(int i=0;i<n;i++)
+   {
+       if(t[i]==c)
+       return i+1;
+   }
+   return -1;//找不到返回 -1
+}
+string songString2(string s)
+{
+  
+   int n =s.size();
+   int l =0;int r =0;
+   string son,temp;
+//每次 不是只移动一格，而是滑动一段
+   temp+=s[0];
+   while(r+1!=n)
+   {
+	   int j= countC(temp,s[r]);
+       if(j ==-1)
+       {
+           temp+=s[r];
+           r++;
+       }else
+       {
+           l+=j;//左指针移动到新重复字符
+       }
+     
+
+     
+   }    
+    
 }
