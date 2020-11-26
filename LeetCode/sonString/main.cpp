@@ -23,9 +23,11 @@ string songString2(string s);
 
 int main(int arg,char *argv[])
 {
+    cout<<"解法一"<<endl;
     cout<<m<<endl;
     cout<<sonString(m)<<endl;
-	cout<<songString2(m)<<endl;
+    cout<<"解法二"<<endl;
+	//cout<<songString2(m)<<endl;
 
     
     return 0;
@@ -87,14 +89,7 @@ string songString2(string s)
            r++;
        }else
        {
-           l+=j;//左指针移动到新重复字符
-           r =l;
-           if(temp.size()>son.size())
-           {
-               son =temp;
-               
-               temp ="";
-           }
+           
        }
      
 
