@@ -25,7 +25,7 @@ int main(int arg,char *argv[])
 {
     cout<<m<<endl;
     cout<<sonString(m)<<endl;
-
+	cout<<songString2(m)<<endl;
 
     
     return 0;
@@ -76,6 +76,7 @@ string songString2(string s)
    int l =0;int r =0;
    string son,temp;
 //每次 不是只移动一格，而是滑动一段
+	son+=s[0];
    temp+=s[0];
    while(r+1!=n)
    {
@@ -87,10 +88,17 @@ string songString2(string s)
        }else
        {
            l+=j;//左指针移动到新重复字符
+           r =l;
+           if(temp.size()>son.size())
+           {
+               son =temp;
+               
+               temp ="";
+           }
        }
      
 
      
    }    
-    
+    return son;
 }
