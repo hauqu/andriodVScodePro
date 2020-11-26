@@ -27,7 +27,7 @@ int main(int arg,char *argv[])
     cout<<m<<endl;
     cout<<sonString(m)<<endl;
     cout<<"解法二"<<endl;
-	//cout<<songString2(m)<<endl;
+	cout<<songString2(m)<<endl;
 
     
     return 0;
@@ -75,25 +75,29 @@ string songString2(string s)
 {
   
    int n =s.size();
-   int l =0;int r =0;
+   int l =0;int r =1;
    string son,temp;
 //每次 不是只移动一格，而是滑动一段
-	son+=s[0];
-   temp+=s[0];
-   while(r+1!=n)
-   {
-	   int j= countC(temp,s[r]);
-       if(j ==-1)
-       {
-           temp+=s[r];
-           r++;
-       }else
-       {
-           
-       }
-     
+    son+=s[0];
+    temp+=s[0];
 
-     
-   }    
+    while(r+1<n)
+    {
+        if(countC(temp,s[r])==-1)
+        {
+            //一个不重复的字符
+            temp+=s[r];
+            r++;//读取下一个
+        }else //字符重复
+        {
+            if(temp.size()>son.size())
+            {
+                son =temp;
+                temp ="";
+                r++;
+            }
+        }
+    }
+    son ="失败";
     return son;
 }
