@@ -68,5 +68,11 @@ int countC(string s,int sl,int sr,char c)
         return i;
     }
     return -1;
+    /*
+
+    该函数 的复杂度为子串的长度，糟糕的情况下
+    多次调用 会增大主体的复杂度
+    使用 空间换时间？
+    */
 }
 
