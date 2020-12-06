@@ -3,7 +3,7 @@
 
 using namespace std;
 string sonString(string s);
-string test ="abcabcbb";
+string test ="hhhhhhh";
 int main(int argc,char *argv[])
 {
     cout<<test<<endl;
@@ -14,6 +14,7 @@ int countC(string s,char c);
 int countC(string s,int sl,int sr,char c);
 string sonString(string s)
 {
+    //在该方法中，临时子串的右游标等于 工作游标
     int l =0;int r =0; //最大子串 
     int i=0;//工作指针
     int j=0;int k=0;//临时子串
@@ -36,9 +37,8 @@ string sonString(string s)
                 l= j;r =k;
             }
             //临时子串滑动
-            int move =  i-si;
-            j+=move;//向右滑动
-            k = i;//游标右移
+            j =si +1;//临时子串左游标移动到重复的字符下标后一个
+            k =i;//游标右移
         }
     }
     string son;
@@ -73,6 +73,7 @@ int countC(string s,int sl,int sr,char c)
     该函数 的复杂度为子串的长度，糟糕的情况下
     多次调用 会增大主体的复杂度
     使用 空间换时间？
+    
     */
 }
 
