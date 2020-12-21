@@ -15,4 +15,5 @@ int main(int arg,char argv[])
 	n =std::stoi(sn);
 	cout<<n<<endl;
     return 0;
+
 }

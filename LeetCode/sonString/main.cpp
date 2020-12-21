@@ -3,7 +3,7 @@
 
 using namespace std;
 string sonString(string s);
-string test ="hhhhhhh";
+string test ="hhhhertygvghhh";
 int main(int argc,char *argv[])
 {
     cout<<test<<endl;
