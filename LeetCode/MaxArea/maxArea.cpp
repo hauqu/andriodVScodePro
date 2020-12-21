@@ -59,7 +59,7 @@ int maxArea2(vector<int>&arr)
 	 2.当选择改变长板，新板可能减小，不变，增大
      但是min(arr[i],arr[j])去最小，即使 较大值变大，取min 后
      min(arr[i],arr[j])不变
-     area 可能不变，减小，不能变大
+     area 必然减小，不能变大
      综上所述 ，舍弃短板
 
     */
