@@ -20,9 +20,9 @@ vector<int>test ={0,1,2,3,4,5,-3,-6,-1};
 int main(int argc,char*argv[])
 {
     cout<<"暴力枚举:"<<endl;
-    solution1(test);
-    cout<<"分而治之"<<endl;
-    solution2(test);
+    //solution1(test);
+    //cout<<"分而治之"<<endl;
+   // solution2(test);
     cout<<"双指针"<<endl;
 	solution3(test);
     return 0;
@@ -131,12 +131,15 @@ void solution3(vector<int>&arr)
 	for(int k =0;k<len;k++)
     {
         int i =0;int j =len -1;
+		if(arr[k]>0)break;
+        //减少一半重复
     	while(i<j)
     	{
 			if(k==i) i++;
             if(k==j) j--;
 
 			if(arr[i]+arr[j]==-arr[k]){
+                
             	cout<<arr[i]<<" "<<arr[j]<<" "<<arr[k]<<endl;
                 i++;
             }
