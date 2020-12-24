@@ -1,6 +1,8 @@
 #include<iostream>
 #include<vector>
 #include<unordered_set>
+#include<algorithm>
+#include<list>
 using namespace std;
 
 /*
@@ -13,6 +15,7 @@ void solution1(vector<int>&arr);
 
 void solution2(vector<int>&arr);
 
+void solution3(vector<int>&arr);
 vector<int>test ={0,1,2,3,4,5,-3,-6,-1};
 int main(int argc,char*argv[])
 {
@@ -20,6 +23,8 @@ int main(int argc,char*argv[])
     solution1(test);
     cout<<"分而治之"<<endl;
     solution2(test);
+    cout<<"双指针"<<endl;
+	solution3(test);
     return 0;
 }
 
@@ -109,5 +114,45 @@ void solution2(vector<int>&arr)
             cout<<vn[i]<<" "<<vn[j]<<" "<<(*temp)<<endl;
         }
     }
+
+}
+
+void solution3(vector<int>&arr)
+{
+
+	
+	//据说能优化到 O（1），心态炸了 ，回家种地吧。艹。
+	//先进行排序 然后使用双指针解决
+	sort(arr.begin(),arr.end());
+	int len =arr.size();
+   	//固定一个数，变成两数求和
+	
+	
+	for(int k =0;k<len;k++)
+    {
+        int i =0;int j =len -1;
+    	while(i<j)
+    	{
+			if(k==i) i++;
+            if(k==j) j--;
+
+			if(arr[i]+arr[j]==-arr[k]){
+            	cout<<arr[i]<<" "<<arr[j]<<" "<<arr[k]<<endl;
+                i++;
+            }
+            else if(arr[i]+arr[j]>-arr[k]) 
+            {
+				j--;
+            }else
+            {
+                i++;
+            }
+
+    	}
+    }
+
+	//该方法造成重复，原因，一个数为和  在其他情况中也可做加数
+    //去重
+
 
 }
