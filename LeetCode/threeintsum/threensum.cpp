@@ -11,16 +11,16 @@ using namespace std;
 
 */
 
-void solution1(vector<int>&arr);
+void solution1(const vector<int>&arr);
 
-void solution2(vector<int>&arr);
+void solution2(const vector<int>&arr);
 
 void solution3(vector<int>&arr);
 vector<int>test ={0,1,2,3,4,5,-3,-6,-1};
 int main(int argc,char*argv[])
 {
     cout<<"暴力枚举:"<<endl;
-    //solution1(test);
+    solution1(test);
     //cout<<"分而治之"<<endl;
    // solution2(test);
     cout<<"双指针"<<endl;
@@ -28,7 +28,7 @@ int main(int argc,char*argv[])
     return 0;
 }
 
-void solution1(vector<int>&arr)
+void solution1(const vector<int>&arr)
 {
     //暴力枚举，复杂度 N*N*N
     int len =arr.size();
@@ -47,7 +47,7 @@ void solution1(vector<int>&arr)
     }
 }
 
-void solution2(vector<int>&arr)
+void solution2(const vector<int>&arr)
 {
     //分而治之,复杂度 N*N
     /*
