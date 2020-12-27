@@ -37,11 +37,9 @@ www.pronhub.com
 
 给一段文字加上超链接 需要中括号包围文字，小括号内写连接
 
-[我的仓库] 
-(https://github.com/settings/profile)
+[我的仓库] (https://github.com/settings/profile)
 
-[我的仓库]
-（https://github.com/settings/profile "悬停显示"）
+[我的仓库]（https://github.com/settings/profile "悬停显示"）
 
 * 带圆点号
 * 	多级原点
