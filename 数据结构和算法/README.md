@@ -1,7 +1,7 @@
 # andriod vs code pro
 # 用于学习数据结构
 
-md文件使用markdown 格式
+md文件使用markdown 格式。
 ======================
 
 使得上文变成大标题
