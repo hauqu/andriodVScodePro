@@ -1,58 +1,35 @@
-# andriod vs code pro
+# andriod vscode pro
 # 用于学习数据结构
+
+
+## 环境
+
+系统： huawei MatePad 10.8 EMUI 11 
+
+软件：Aid Learning 
+
+编辑器：vscode 扩展 Code Runner 0.9.17
+
+
 
 md文件使用markdown 格式。
 ======================
 
-使得上文变成大标题
+## 声明
 
----------------
+作者 :huaqu
 
-上文变为中标题
+GitHub:
+https://github.com/hauqu/
 
-## 二级标题
+本仓库用于学习数据结构知识，所有内容凭借记忆书写，你可以自由下载，修改，传播本《数据结构和算法》下的所有内容，转载不需注明出处。
 
-### 三级标题
-
-这是一段普通的文本 
-
-直接回车不能换行 需要 使用 \<br> 
-<br>
-
-插入超链接直接输入URL即可<br>
-
-www.pronhub.com
-
-		使用两个Tab 实现单行文本
-
-<br>
-
-		使用
-        两个
-        Tab
-        让行文本在一起
-
-高亮显示 需要 `使用Tab上方的点点包围需要高亮的文字` 需要使用英文标点<br>
+该仓库是公有的，如果你发现错误可以添加分支，修改后提交。
+仓库地址：
+https://github.com/hauqu/andriodVScodePro
 
 
-给一段文字加上超链接 需要中括号包围文字，小括号内写连接
+## 警告
 
-[我的仓库] (https://github.com/settings/profile)
-
-[我的仓库]（https://github.com/settings/profile "悬停显示"）
-
-* 带圆点号
-* 	多级原点
-
->缩进
-
->>缩进 
-
->>>>>>>>>>>>缩进
-
-
-![picture]
-(http://www.baidu.com/img/bdlogo.gif "悬停显示提示")
-
-
-
+·本人不为内容的正确性负责。
+·2021.1.3 于振华图书馆。
