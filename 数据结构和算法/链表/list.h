@@ -13,6 +13,7 @@ public:
     node*end()const;
     int front();
     int back();
+    int size();
     node*push_back(int data);
     int pop_back();
     ~singleList();
@@ -26,6 +27,17 @@ node* singleList::end() const
         temp =temp->next;
     }
     return temp;
+}
+int singleList::size()
+{
+    node*temp =head;
+    int n =0;
+    while(temp->next!=nullptr)
+    {
+        temp =temp->next;
+		n++;
+    }
+    return n;
 }
 node*singleList::push_back(int data)
 {
@@ -51,6 +63,7 @@ int singleList::pop_back()
     return d;
 
 }
+
 int singleList::back()
 {
     if(head->next =nullptr)
@@ -71,5 +84,9 @@ singleList::singleList()
 }
 singleList::~singleList()
 {
-
+	int s =size();
+    while(s--)
+    {
+        this->pop_back();
+    }
 }

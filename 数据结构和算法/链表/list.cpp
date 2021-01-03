@@ -19,9 +19,7 @@ int main(int argc,char**argv)
     }
     
     cout<<endl;
-   cout<<test.pop_back()<<endl;
-
-   cout<<test.pop_back()<<endl;
+  	
 	cout<<"执行完毕"<<endl;
     return 0;
 }
