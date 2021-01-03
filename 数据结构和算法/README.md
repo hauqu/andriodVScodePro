@@ -6,7 +6,11 @@
 
 系统： huawei MatePad 10.8 EMUI 11 
 
+https://consumer.huawei.com/cn/tablets/matepad-10-8/
+
 软件：Aid Learning 
+
+http://www.aidlearning.net
 
 编辑器：vscode 扩展 Code Runner 0.9.17
 
