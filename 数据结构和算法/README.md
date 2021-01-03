@@ -31,5 +31,5 @@ https://github.com/hauqu/andriodVScodePro
 
 ## 警告
 
-·本人不为内容的正确性负责。
+·本人不为内容的正确性负责。<br>
 ·2021.1.3 于振华图书馆。
