@@ -21,7 +21,7 @@ md文件使用markdown 格式。
 
 ## 声明
 
-作者 :huaqu
+作者 :hauqu
 
 GitHub:
 https://github.com/hauqu/
