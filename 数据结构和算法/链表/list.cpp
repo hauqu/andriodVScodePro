@@ -1,5 +1,5 @@
 #include<iostream>
-#include"list.h"
+#include"singleList.h"
 using namespace std;
 
 int main(int argc,char**argv)
