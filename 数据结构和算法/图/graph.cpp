@@ -5,7 +5,6 @@
 #include<vector>
 #include<list>
 #include<string>
-#include<unordered_set>
 #include<map>
 using namespace std;
 enum nodeCate
@@ -17,14 +16,32 @@ class  node
 public:
 	int x;
     int y;
-    vector<string>name;
+    vector<string>namelist;
+    node(int _x,int _y);
 	nodeCate cate;
+public:
+    bool addName(string n);
 };
+bool node::addName(string n)
+{
+    namelist.push_back(n);
+}
+node::node(int _x,int _y):x(_x),y(_y),
+cate(nodeCate::building)
+{
+	namelist.push_back("null");
+}
 class vect
 {
 	int desId;
     int weight;
+    vect(int id,int w);
 };
+vect::vect(int id ,int w):
+desId(id),weight(w)
+{
+
+}
 class Graph
 {
     public:
