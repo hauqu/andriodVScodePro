@@ -11,11 +11,11 @@ int main(int argc,char *argv[])
         test.push_back(i);
     }
 
-    node* temp =test.head;
+    node* temp =test.head->next;
     while(temp!=nullptr)
     {
         cout<<" "<<temp->data;
-        temp =temp->last;
+        temp =temp->next;
     }
     return 0;
 }
