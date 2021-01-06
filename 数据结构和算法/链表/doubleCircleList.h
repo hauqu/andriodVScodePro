@@ -13,12 +13,15 @@ class node
 
 class doubleCircleList
 {
+
+public:
+
 	node* root;//一个访问入口
     node* head;
     node* tail;
     doubleCircleList();
     int pop();
-    int push();
+    int push(int d);
 
 };
 doubleCircleList::doubleCircleList()
@@ -40,3 +43,9 @@ doubleCircleList::doubleCircleList()
     tail->last =root;
 }
 
+int doubleCircleList::push(int d)
+{
+	node *l =root->next;
+
+
+}
