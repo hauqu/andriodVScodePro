@@ -10,12 +10,13 @@ int main(int argc,char *argv[])
     {
         test.push_back(i);
     }
-
     node* temp =test.head->next;
     while(temp!=nullptr)
     {
-        cout<<" "<<temp->data;
+		cout<<" "<<temp->data;
         temp =temp->next;
     }
+
+	cout<<"双链表执行完毕"<<endl;
     return 0;
 }

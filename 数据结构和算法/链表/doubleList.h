@@ -77,9 +77,14 @@ int doubleList::size()
 }
 doubleList::~doubleList()
 {
-    int s =size();
-    while(s--)
-    {
-        this->pop_back();
-    }
+
+  node *tail =end();
+  while(tail!=nullptr)
+  {
+      node*temp =tail;
+      tail =tail->last;
+      delete temp;
+  }
+
+
 }
