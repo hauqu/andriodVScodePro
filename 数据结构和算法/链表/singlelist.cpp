@@ -1,5 +1,6 @@
 #include<iostream>
 #include"singleList.h"
+
 using namespace std;
 
 int main(int argc,char**argv)
@@ -17,6 +18,7 @@ int main(int argc,char**argv)
         cout<<temp->data<<" ";
         temp =temp->next;
     }
+    
     
     cout<<endl;
   	
