@@ -22,6 +22,7 @@ public:
     doubleCircleList();
     int pop();
     int push(int d);
+    int size();
 
 };
 doubleCircleList::doubleCircleList()
@@ -45,7 +46,30 @@ doubleCircleList::doubleCircleList()
 
 int doubleCircleList::push(int d)
 {
-	node *l =root->next;
+    /*
+    插入到head 和tail之间
+    */
+	node *temp = new node ;
+    temp->data =d;
+    node *hn = head->next;
 
+    hn->last = temp;
+    temp->next =hn;
 
+    head->next =temp;
+    temp->last =head;
+
+    return 1;
+
+}
+int doubleCircleList::size()
+{
+    int n =1;
+    node *temp = root->next;
+    while(temp!=root)
+    {
+        temp =temp->next;
+        n++;
+    }
+    return n;
 }
