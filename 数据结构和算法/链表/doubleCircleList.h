@@ -21,7 +21,7 @@ public:
     node* tail;
     doubleCircleList();
     int pop();
-    int push(int d);
+    node* push(int d);
     int size();
 
 };
@@ -44,7 +44,7 @@ doubleCircleList::doubleCircleList()
     tail->last =root;
 }
 
-int doubleCircleList::push(int d)
+node* doubleCircleList::push(int d)
 {
     /*
     插入到head 和tail之间
@@ -59,8 +59,23 @@ int doubleCircleList::push(int d)
     head->next =temp;
     temp->last =head;
 
-    return 1;
+    return temp;
 
+}
+int doubleCircleList::pop()
+{
+    int s =size();
+    if(s<=3)
+    {
+        return 0;
+        //不允许删除 三个访问入入口
+    }
+    node* temp = head->next;
+    head->next = temp->next;
+    temp->next->last = head;
+    int d =temp->data;
+    delete temp;
+    return d;
 }
 int doubleCircleList::size()
 {

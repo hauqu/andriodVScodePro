@@ -17,10 +17,14 @@ int main(int argc,char*argv[])
     node *temp = test.root;
     for(int i =0;i<100;i++)
     {
-        temp =temp->next;
+        temp =temp->last;
         cout<<temp->data<<" ";
         if(i%10==0)
         cout<<endl;
+    }
+    for(int i=0;i<5;i++)
+    {
+        cout<<" "<<test.pop()<<endl;
     }
     return 0;
 }
