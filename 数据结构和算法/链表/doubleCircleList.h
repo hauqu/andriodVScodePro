@@ -23,6 +23,8 @@ public:
     int pop();
     node* push(int d);
     int size();
+    ~doubleCircleList();
+    
 
 };
 doubleCircleList::doubleCircleList()
@@ -87,4 +89,16 @@ int doubleCircleList::size()
         n++;
     }
     return n;
+}
+doubleCircleList::~doubleCircleList()
+{
+    node *start = root->next;
+    while(start!=root)
+    {
+        node *temp = start;
+        start =start->next;
+        delete temp;
+    }
+    delete start;
+
 }
