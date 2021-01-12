@@ -16,7 +16,7 @@ int main()
     }cout<<endl;
     vector<node>t;
 
-    if(test.remove(0,0,1,0,t))
+    if(test.remove(0,0,0,3,t))
     {
         cout<<"能消除"<<endl;
     }else 

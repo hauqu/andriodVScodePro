@@ -284,8 +284,8 @@ bool Graph::remove(int x1,int y1,int x2,int y2,vector<node>&t)
 		t.push_back(g[x1][y1]);
         t.push_back(g[x2][y2]);
         return true;
-    }else 
-    {
+    } 
+    
 		t =search_one_inflection(x1,y1,x2,y2);
         if(t.empty()!=true)
         {
@@ -295,14 +295,11 @@ bool Graph::remove(int x1,int y1,int x2,int y2,vector<node>&t)
             t.push_back(temp);
             t.push_back(g[x2][y2]);
             return true;
-        }else 
-        {
+        }
             t =search_two_inflection(x1,y1,x2,y2);
             if(t.empty())
             {
                 return false;
             }
-        }
-    }
 	return false;
 }
