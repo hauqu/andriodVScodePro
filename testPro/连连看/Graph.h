@@ -233,11 +233,14 @@ vector<node> Graph::search_two_inflection(int x1,int y1,int x2,int y2)
     node c2;
     //找竖直线
 	int xl = min(x1,x2);
-    int xh =max(x1,x2);
+    int xh = max(x1,x2);
     for(int x =xl+1;x<xh;x++)
     {
 		c1 =g[x][y2];
         c2 =g[x][y1];
+        /*
+         拐点值 和 出发点不一定相等
+        */
         if(search_vertical(x,y2,x2,y2)==true)
         {
             if(search_vertical(x,y1,x1,y1)==true)
