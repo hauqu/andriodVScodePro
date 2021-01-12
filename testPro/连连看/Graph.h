@@ -138,33 +138,34 @@ bool Graph::search_direct(int x1,int y1,int x2,int y2)
 
 bool Graph::search_vertical(int x1,int y1,int x2,int y2)
 {
-    bool falg =true;
+    
 	if(x1==x2)
     {
        if(y1>y2)
        {
 			for(int i =y2+1;i<y1;i++)
             {
-                if(g[x1][i].d !=0)
-                	falg =false;
+                if(g[x1][i].d !=0){
+                    return false;
+                    }
             }
        }
        else if(y1<y2)
        {
 		for(int i =y1+1;i<y2;i++)
             {
-                if(g[x1][i].d !=0)
-                	falg =false;
+                if(g[x1][i].d !=0){
+                    return false;
+                    }
             }
        }
-    }
-    return falg;
+    }else return false;
+    return true;
 }
 
 
 bool Graph::search_horizontal(int x1,int y1,int x2,int y2)
 {
-    bool falg =true;
 	if(y1==y2)
     {
        if(x1>x2)
@@ -172,7 +173,7 @@ bool Graph::search_horizontal(int x1,int y1,int x2,int y2)
 			for(int i =x2+1;i<x1;i++)
             {
                 if(g[i][y1].d !=0)
-                	falg =false;
+                	return  false;
             }
             
        }
@@ -181,11 +182,11 @@ bool Graph::search_horizontal(int x1,int y1,int x2,int y2)
 		for(int i =x1+1;i<x2;i++)
             {
                 if(g[i][y1].d !=0)
-                	falg =false;
+                	return false;
             }
        } 
-    }
-    return falg;
+    }else  return false;
+    return true;
 }
 
 vector<node>Graph::search_one_inflection(int x1,int y1,int x2,int y2)
@@ -278,11 +279,13 @@ vector<node> Graph::search_two_inflection(int x1,int y1,int x2,int y2)
 bool Graph::remove(int x1,int y1,int x2,int y2,vector<node>&t)
 {
     if(g[x1][y1].d !=g[x2][y2].d) return false;
+
 	if(search_horizontal(x1,y1,x2,y2)==true||
         search_vertical(x1,y1,x2,y2)==true)
     {
 		t.push_back(g[x1][y1]);
         t.push_back(g[x2][y2]);
+        cout<<"直线连接"<<endl;
         return true;
     } 
     
@@ -294,12 +297,18 @@ bool Graph::remove(int x1,int y1,int x2,int y2,vector<node>&t)
             t.push_back(g[x1][y1]);
             t.push_back(temp);
             t.push_back(g[x2][y2]);
+            cout<<"一个拐点"<<endl;
             return true;
         }
+        	t.clear();
             t =search_two_inflection(x1,y1,x2,y2);
             if(t.empty())
             {
                 return false;
+            }else{
+                cout<<"两个拐点"<<endl;
+                 return true;
             }
+
 	return false;
 }
