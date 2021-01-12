@@ -10,11 +10,20 @@ int main()
     {
         for(int j=0;j<test.g[i].size();j++)
         {
-			cout<<test.g[i][j].d<<"("
-            <<test.g[i][j].x<<","
-            <<test.g[i][j].y<<") ";
+			cout<<test.g[i][j].d;
         }
         cout<<endl;
+    }cout<<endl;
+    vector<node>t;
+
+    if(test.remove(0,0,1,0,t))
+    {
+        cout<<"能消除"<<endl;
+    }else 
+    {
+        cout<<"不能消除"<<endl;
     }
+    
+    
     return 0;
 }
