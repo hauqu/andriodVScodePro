@@ -10,9 +10,7 @@ int main()
     {
         for(int j=0;j<test.g[i].size();j++)
         {
-            
 			cout<<test.g[i][j].d;
-            
         }
         cout<<endl;
     }cout<<endl;
