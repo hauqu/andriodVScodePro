@@ -16,6 +16,7 @@ class Map
 
 public:
 	vector<vector<bool>>mine;//雷
+    
 	vector<vector<int>>draw;//显示
     Map(int w,int h,int n);
     int findMine(int x,int y);//寻找某一个格子周围雷的数量
@@ -33,14 +34,14 @@ Map::Map(int w,int h,int n):
         draw.resize(w);
         for(int i =0;i<W;i++)
         {
-            mine[i].reszize(H,false);
+            mine[i].resize(H,false);
             draw[i].resize(H,0);
         }
 
 	while(n>=0)
     {
         n--;
-        int x =rand()%W；
+        int x =rand()%W;
         int y =rand()%H;
         if(mine[x][y]==false){
         	mine[x][y]=true;
