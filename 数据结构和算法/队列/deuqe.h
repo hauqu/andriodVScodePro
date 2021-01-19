@@ -1,5 +1,5 @@
 #include"doubleList.h"
-
+// to do 重写deque ，因为底层不对
 class deque:private doubleList
 {
 	
