@@ -16,7 +16,7 @@ int main(int argc,char *argv[])
 		cout<<" "<<temp->data;
         temp =temp->next;
     }cout<<endl;
-	test.pop_back();
+//	test.pop_back();
 	cout<<"双链表执行完毕"<<endl;
     return 0;
 }

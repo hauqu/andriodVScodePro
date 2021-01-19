@@ -51,9 +51,14 @@ node*doubleList::push_back(int data)
 }
 node*doubleList::end()
 {
+    if(head->next==nullptr) return nullptr;
      node*temp =head;
-    while(temp->next!=nullptr)
+    while(true)
     {
+        if(temp->next==nullptr)
+        {
+            break;
+        }
         temp =temp->next;
     }
     return temp;
@@ -61,6 +66,14 @@ node*doubleList::end()
 int doubleList::pop_back()
 {
     //双向链表 出表方法重写
+    node*r =end();
+	node*l =r->last;
+    int d =r->data;
+    l->next =nullptr;
+    delete r;
+    return d;
+
+
 }
 int doubleList::size()
 {
