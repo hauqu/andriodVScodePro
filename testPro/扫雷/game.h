@@ -1,4 +1,5 @@
 #include<vector>
+#include<iostream>
 using namespace std;
 
 
@@ -55,7 +56,7 @@ Map::Map(int w,int h,int n):
 	
 
     }
-int findMine(int x,int y)
+int Map::findMine(int x,int y)
 {
     //上下左右四个边界
 	int n =0;
