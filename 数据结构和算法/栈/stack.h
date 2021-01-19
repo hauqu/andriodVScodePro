@@ -14,17 +14,17 @@ public:
     int pop();
 	bool empty();
 private:
-	node*root;
+	
 };
 
 stack::stack()
 {
-	root =head;
+	
 }
 
 bool stack::empty()
 {
-    if(root==head)
+    if(head->last==nullptr)
     	return true;
     else return false;
 }
@@ -32,11 +32,8 @@ bool stack::empty()
 void stack::push(int d)
 {
 	push_back(d);
-    root =root->next;    
 }
 int stack::pop()
 {
     int d =pop_back();
-    root =end();
-    return d;
 }
