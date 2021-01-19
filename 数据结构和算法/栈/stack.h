@@ -36,4 +36,5 @@ void stack::push(int d)
 int stack::pop()
 {
     int d =pop_back();
+    return d;
 }

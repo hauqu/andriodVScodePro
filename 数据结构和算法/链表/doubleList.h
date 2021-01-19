@@ -51,8 +51,7 @@ node*doubleList::push_back(int data)
 }
 node*doubleList::end()
 {
-    if(head->next==nullptr) return nullptr;
-     node*temp =head;
+	  node*temp =head;
     while(true)
     {
         if(temp->next==nullptr)

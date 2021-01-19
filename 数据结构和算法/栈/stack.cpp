@@ -11,7 +11,7 @@ int main(int argc,char*argv[])
         cout<<" "<<i;
     }cout<<endl;
 	
-    for(int i=0;i<3;i++)
+    for(int i=0;i<10;i++)
     {
     	cout<<" "<<test.pop();    
     }cout<<endl;

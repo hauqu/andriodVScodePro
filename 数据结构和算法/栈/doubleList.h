@@ -12,8 +12,7 @@ class node
 };
 class doubleList
 {
-
-protected:
+    public:
     node* head ;
     node* end();
     node*push_back(int data);
@@ -52,23 +51,28 @@ node*doubleList::push_back(int data)
 }
 node*doubleList::end()
 {
-     node*temp =head;
-    while(temp->next!=nullptr)
+	  node*temp =head;
+    while(true)
     {
+        if(temp->next==nullptr)
+        {
+            break;
+        }
         temp =temp->next;
     }
     return temp;
 }
 int doubleList::pop_back()
 {
-    if(head->next==nullptr) return 0;
-    int d =0;
-    node* r =end();
-    node* l =r->last;
-    l->last =nullptr;
-    d =r->data;
+    //双向链表 出表方法重写
+    node*r =end();
+	node*l =r->last;
+    int d =r->data;
+    l->next =nullptr;
     delete r;
-	return d;
+    return d;
+
+
 }
 int doubleList::size()
 {
