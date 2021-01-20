@@ -11,13 +11,14 @@ int main(int argc,char *argv[])
     for(int i=0;i<10;i++)
     {
         test.push(i);
-    }cout<<endl;
+        cout<<i<<" ";
+    }cout<<endl<<"入队"<<endl;
     
     
   	while(!test.empty()){
-    cout<<endl<<test.pop();
+    cout<<" "<<test.pop();
       }
-
+		cout<<endl<<"出队"<<endl;
     cout<<"执行完毕"<<endl;
     return 0;
 }
