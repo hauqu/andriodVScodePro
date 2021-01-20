@@ -13,6 +13,7 @@ public:
 	void push(int d);
     int pop();
 	bool empty();
+    
 private:
 	
 };
