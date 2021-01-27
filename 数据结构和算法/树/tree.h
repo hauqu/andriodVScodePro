@@ -19,5 +19,7 @@ class BiTree{
     node* root;
     BiTree();//
  	BiTree(int*a,int n);
+    
     //可以使用完美二叉树初始化一棵树，不存在的节点为特殊值
 };
+
