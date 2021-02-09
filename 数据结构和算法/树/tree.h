@@ -1,77 +1,108 @@
 /*
-一个带根节点的二叉树
+一颗二叉树
 
 */
+#include<vector>
 #include<iostream>
 using namespace std;
 class node
 {
- public:
- 	 int data;
-      node* left;
-      node* right;
-	
-};
+ 
+public:
+	int data;
+    node* left;
+    node* right;
+public:
+	node(int d):
+    	data(d),
+        left(nullptr),
+        right(nullptr)
+        {
 
-class BiTree{
+        }
+    node():
+    	data(0),
+        left(nullptr),
+        right(nullptr)
+        {
 
-    public:
+        }
+    node(int d,node*l,node *r):
+    	data(d),
+        left(l),
+        right(r)
+        {
+
+        }
+public:
+	virtual ~node(){}
     
-    node* root;
-    BiTree(int *a,int n);//根据一个数组生成一个完美二叉树
- 	BiTree(int*a,int s,node* r);//使用递归的方法生成一棵树,为层数
-	    
-    //可以使用完美二叉树初始化一棵树，不存在的节点为特殊值
-    void preorder(node*r);//先序遍历
+
+};
+class BiTree
+{
+ 
+ public:
+	node *root;//二叉树的访问入口，一个平平无奇的根节点
+
+ public:
+	BiTree():
+     root(nullptr)
+     {
+         //一棵空的二叉树
+     }
+    
+    BiTree(node*r):
+    	root(r)
+        {
+
+        }
+    	
+ public:
+	BiTree(vector<int>&arr);//利用数组生成一棵二叉树
+ 
+ public:
+    void preorderTraversal(node *r);
+    void inorderTraversal(node *r);
+    void postorderTraversal(node *r);
+    
+ public:
+	int size(node *root);
+ 
+ public:
+	
+	node* creatTree(vector<int>&arr,node*r);
+
 };
 
-BiTree::BiTree(int *a,int n)
+BiTree::BiTree(vector<int>&arr)
 {
-    int temp =n+1;
-    int s =0;
-    while(temp!=1)
+	//
+    root = creatTree(arr,root);
+}
+
+void BiTree::preorderTraversal(node *r)
+{
+    //递归的方法先序遍历
+	if(r==nullptr) 
     {
-        temp =temp /2;
-        s++;
+      cout<<"叶子"<<endl;
+        return ;
     }
 
+    cout<<r->data<<" ";
 
+    preorderTraversal(r->left);
+    preorderTraversal(r->right);
 }
 
-
-/*
- 	1
-2        3
-
-45       67
-
-
-满二叉树的节点数n 1  3 7 
-
-层数          s 1  2 3
-
-可得关系  n = 2^s-1
-
-
-
-*/
-BiTree::BiTree(int *a,int s,node*r)
+node* BiTree::creatTree(vector<int>&arr,node*r)
 {
-    static int i =0;
-    if(i==s) return ;
-	r->data =a[i];
-    i++;
-    BiTree(a,s,r->left);
-    BiTree(a,s,r->right);
-}
+ 	static int i =-1;
+    if(arr[++i]==-1) return nullptr ;
 
-
-
-void BiTree::preorder(node*r)
-{
-    if(r==nullptr)
-    	return ;
-	cout<<r->data<<" ";
- 	preorder(r->left);
-    preorder(r->right);   
+    r = new node(arr[i]);
+    r->left = creatTree(arr,r->left);
+	r->right = creatTree(arr,r->right);
+	return r;
 }
