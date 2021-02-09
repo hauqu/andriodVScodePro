@@ -86,7 +86,7 @@ void BiTree::preorderTraversal(node *r)
     //递归的方法先序遍历
 	if(r==nullptr) 
     {
-      cout<<"叶子"<<endl;
+      cout<<endl<<"叶子";
         return ;
     }
 
