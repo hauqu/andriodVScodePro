@@ -3,6 +3,7 @@
 
 */
 #include<vector>
+#include<deque>
 #include<iostream>
 using namespace std;
 class node
@@ -65,7 +66,7 @@ class BiTree
     void preorderTraversal(node *r);
     void inorderTraversal(node *r);
     void postorderTraversal(node *r);
-    
+	void sequenceTraversal(node*r);    
  public:
 	int size(node *root);
  
@@ -94,6 +95,27 @@ void BiTree::preorderTraversal(node *r)
 
     preorderTraversal(r->left);
     preorderTraversal(r->right);
+}
+
+void BiTree::sequenceTraversal(node*r)
+{
+	static deque<int>t;
+    if(r==nullptr) return ;
+    else
+    {
+        
+        if(r->left!=nullptr)
+        {
+         	t.push_back(r->left->data);
+            sequenceTraversal(r->left);
+        }
+        if(r->right!=nullptr)
+        {
+            t.push_back(r->right->data);
+            sequenceTraversal(r->right);
+        }
+    }
+
 }
 
 node* BiTree::creatTree(vector<int>&arr,node*r)
